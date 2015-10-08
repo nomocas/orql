@@ -1,0 +1,41 @@
+{
+  "name": "orql",
+  "version": "0.1.0",
+  "description": "RQL for js array with no eval.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "dist": "npm run build && gulp uglify",
+    "build": "browserify -s orql index.js > dist/orql.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nomocas/orql.git"
+  },
+  "keywords": [
+    "rql",
+    "array",
+    "filter"
+  ],
+  "author": "Gilles Coomans <gilles.coomans@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nomocas/orql/issues"
+  },
+  "homepage": "https://github.com/nomocas/orql",
+  "dependencies": {
+    "rql": "^0.3.3"
+  },
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.10.0",
+    "gulp-live-server": "0.0.14",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglifyjs": "^0.6.1",
+    "jshint-stylish": "^1.0.1"
+  }
+}

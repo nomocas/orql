@@ -1,8 +1,14 @@
 # orql
 
-[RQL] for js array with no eval.
+A reimplmentation RQL for JavaScript arrays based on rql/js-array from Kris Zyp (https://github.com/persvr/rql).
 
+([original file](https://github.com/persvr/rql/blob/master/js-array.js)).
 
+No more eval or new Function. (it has been made for Adobe Air projects. Adobe Air does not allow eval or new Function).
+
+Contains could also check if an array is contained in another array.
+
+Could handle dotted path for sub properties.
 
 ## Install
 
@@ -17,8 +23,10 @@ git clone https://github.com/nomocas/orql.git
 ## Examples
 
 ```javascript
-
+var filtered = orql([{a:{b:3}},{a:3}], "a.b=3"); // -> [{a:{b:3}]
 ```
+
+For full API, look at [RQL github](https://github.com/persvr/rql);
 
 ## Tests
 

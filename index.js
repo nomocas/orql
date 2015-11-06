@@ -449,7 +449,6 @@
 				second = property;
 				property = undefined;
 			}
-			var args = arguments;
 			var filtered = [];
 			for (var i = 0, length = this.length; i < length; i++) {
 				var item = this[i];

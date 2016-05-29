@@ -97,7 +97,7 @@
 					var ar = retrieve(a, term.attribute);
 					var br = retrieve(b, term.attribute);
 					if (ar != br)
-						return term.ascending == ar > br ? 1 : -1;
+						return ar > br ? 1 : -1;
 					term = terms[i];
 				}
 				return 0;
@@ -425,15 +425,13 @@
 	}
 
 	function retrieve(obj, path) {
-		if (!path)
+		if (!path || !obj)
 			return obj;
 		var splitted = path.split(".");
 		var tmp = obj;
-		if (!tmp)
-			return;
 		var count = 0,
-			part = splitted[count];
-		while (part && tmp[part]) {
+			part = splitted[0];
+		while (part && typeof tmp[part] !== 'undefined') {
 			tmp = tmp[part];
 			part = splitted[++count];
 		}
